@@ -27,6 +27,6 @@ where X is the user’s number, Y is the current number in the loop, and Z is th
 
 number = int(input("Enter a number to see its multiplication table:"))
 
-for value in range(1,10):
+for value in range(1,11):
     product = value * number
     print(f"{number} * {value} = {product}")
