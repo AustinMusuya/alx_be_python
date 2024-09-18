@@ -54,19 +54,22 @@ match priority:
             message = ' that requires immediate attention today!'
         elif time_bound == 'no':
             message = "Consider completing it when you have free time."
-        print(f"{task} is a high priority task{message}")
+        Reminder = f"{task} is a high priority task{message}"
+        print(f"{Reminder}")
     case "medium":
         if time_bound == 'yes':
             message = ' that requires immediate attention today!'
         elif time_bound == 'no':
             message = ". Consider completing it when you have free time."
-        print(f"{task} is a medium priority task{message}")
+        Reminder = f"{task} is a medium priority task{message}"    
+        print(f"{Reminder}")
     case "low":
         if time_bound == 'yes':
             message = ' that requires immediate attention today!'
         elif time_bound == 'no':
             message = "Consider completing it when you have free time."
-        print(f"{task} is a low priority task{message}")
+        Reminder = f"{task} is a low priority task{message}"
+        print(f"{Reminder}")
 
 
 
