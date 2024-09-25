@@ -39,6 +39,7 @@ Future date: 2024-04-04
 from datetime import datetime, date, timedelta
 def display_current_datetime():
     current_date = datetime.now()
+    current_date = current_date.replace(microsecond=0)
     return f"Current date and time: {current_date}"
 
 current_date = display_current_datetime()
