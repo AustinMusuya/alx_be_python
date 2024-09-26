@@ -72,7 +72,7 @@ and returns the temperature converted to Fahrenheit.
 '''
 
 def convert_to_celsius(fahrenheit):
-    celsius = FAHRENHEIT_TO_CELSIUS_FACTOR * fahrenheit - 32
+    celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR 
     return celsius
 
 '''
@@ -81,7 +81,7 @@ and returns the temperature converted to Celsius.
 '''
 
 def convert_to_fahrenheit(celsius):
-    fahrenheit = 32 + CELSIUS_TO_FAHRENHEIT_FACTOR * celsius 
+    fahrenheit = 32 + (CELSIUS_TO_FAHRENHEIT_FACTOR * celsius)
     return fahrenheit
 
 if temp_type == 'c':
@@ -92,4 +92,5 @@ elif temp_type == 'f':
     print(f"{temperature}°F is {converted_temp}°C")
 else:
     print("Please choose either C for Celsius or F for Fahrenheit.")
+
 
