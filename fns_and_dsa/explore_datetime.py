@@ -37,6 +37,7 @@ Future date: 2024-04-04
 
 
 from datetime import datetime, date, timedelta
+
 def display_current_datetime():
     current_date = datetime.now()
     current_date = current_date.strftime("%Y-%m-%d %H:%M:%S") 
@@ -54,10 +55,3 @@ def calculate_future_date():
     print(f"Future date: {future_date}")
 
 calculate_future_date()
-
-
-
-
-# "%Y-%m-%d %H:%M:%S"
-
-
