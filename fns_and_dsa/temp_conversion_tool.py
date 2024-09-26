@@ -53,8 +53,9 @@ FAHRENHEIT_TO_CELSIUS_FACTOR and CELSIUS_TO_FAHRENHEIT_FACTOR to store the conve
 (e.g., (5/9) for F to C and (9/5) for C to F, respectively).
 
 '''
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 
 
 # If the user entered a wrong input,raise an error “Invalid temperature. Please enter a numeric value.”
@@ -85,9 +86,9 @@ def convert_to_fahrenheit(celsius):
 
 if temp_type == 'c':
     converted_temp = convert_to_fahrenheit(temperature)
-    print(f"{float(temperature)}°C is {float(converted_temp)}°F")
+    print(f"{temperature}°C is {converted_temp}°F")
 elif temp_type == 'f':
     converted_temp = convert_to_celsius(temperature)
-    print(f"{float(temperature)}°F is {float(converted_temp)}°C")
+    print(f"{temperature}°F is {converted_temp}°C")
 else:
     print("Please choose either C for Celsius or F for Fahrenheit.")
