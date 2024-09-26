@@ -35,6 +35,7 @@ Guidance:
 Remember to access global variables using the global keyword if you need to modify them inside functions. 
 However, for this task, you’ll only be reading their values.
 Use input validation to ensure that the user enters a valid temperature and unit.
+
 Example Output (Hypothetical):
 Enter the temperature to convert: 100
 Is this temperature in Celsius or Fahrenheit? (C/F): F
@@ -81,7 +82,7 @@ and returns the temperature converted to Celsius.
 '''
 
 def convert_to_fahrenheit(celsius):
-    fahrenheit = 32 + (CELSIUS_TO_FAHRENHEIT_FACTOR * celsius)
+    fahrenheit = 32 + CELSIUS_TO_FAHRENHEIT_FACTOR * celsius
     return fahrenheit
 
 if temp_type == 'c':
