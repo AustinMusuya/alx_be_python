@@ -59,17 +59,11 @@ CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
 # If the user entered a wrong input,raise an error “Invalid temperature. Please enter a numeric value.”
 try:
-    temperature = int(input("Enter the temperature to convert: "))
+    temperature = float(input("Enter the temperature to convert: "))
 except (ValueError):
     print("Invalid temperature. Please enter a numeric value.")
 
 temp_type = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").lower()
-
-
-
-# if type(temperature) != int:
-#     print("Invalid temperature. Please enter a numeric value.")
-
 
 ''' 
 Step2: Write a function convert_to_fahrenheit(celsius) that takes a temperature in Celsius
@@ -77,9 +71,8 @@ and returns the temperature converted to Fahrenheit.
 '''
 
 def convert_to_celsius(fahrenheit):
-    celsius = FAHRENHEIT_TO_CELSIUS_FACTOR * fahrenheit
+    celsius = FAHRENHEIT_TO_CELSIUS_FACTOR * (fahrenheit - 32)
     return celsius
-
 
 '''
 Step 3 : Write a function convert_to_celsius(fahrenheit) that takes a temperature in Fahrenheit 
@@ -87,7 +80,7 @@ and returns the temperature converted to Celsius.
 '''
 
 def convert_to_fahrenheit(celsius):
-    fahrenheit = CELSIUS_TO_FAHRENHEIT_FACTOR * celsius
+    fahrenheit = (CELSIUS_TO_FAHRENHEIT_FACTOR * celsius) + 32
     return fahrenheit
 
 if temp_type == 'c':
@@ -97,4 +90,4 @@ elif temp_type == 'f':
     converted_temp = convert_to_celsius(temperature)
     print(f"{float(temperature)}°F is {float(converted_temp)}°C")
 else:
-    print("choose either C/F")
+    print("Please choose either C for Celsius or F for Fahrenheit.")
