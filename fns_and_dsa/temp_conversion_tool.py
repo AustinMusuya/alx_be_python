@@ -56,6 +56,7 @@ FAHRENHEIT_TO_CELSIUS_FACTOR and CELSIUS_TO_FAHRENHEIT_FACTOR to store the conve
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
+
 # If the user entered a wrong input,raise an error “Invalid temperature. Please enter a numeric value.”
 try:
     temperature = int(input("Enter the temperature to convert: "))
@@ -76,7 +77,6 @@ and returns the temperature converted to Fahrenheit.
 '''
 
 def convert_to_celsius(fahrenheit):
-    global FAHRENHEIT_TO_CELSIUS_FACTOR
     celsius = FAHRENHEIT_TO_CELSIUS_FACTOR * fahrenheit
     return celsius
 
@@ -87,7 +87,6 @@ and returns the temperature converted to Celsius.
 '''
 
 def convert_to_fahrenheit(celsius):
-    global CELSIUS_TO_FAHRENHEIT_FACTOR
     fahrenheit = CELSIUS_TO_FAHRENHEIT_FACTOR * celsius
     return fahrenheit
 
