@@ -68,11 +68,33 @@ Display Balance:
 Expected Output: Current Balance: $[amount]
 
 Implementation Notes for you:
+
 Ensure your BankAccount class in bank_account.py correctly 
 implements the specified functionalities and adheres to the principles of encapsulation.
+
 Use main.py to test your BankAccount class by performing various operations. 
+
 Adjust the initial balance as needed for testing different scenarios.
+
 This task combines learning OOP concepts with practical command line interaction, 
 enhancing your understanding of Python programming.
 
 """
+
+
+class BankAccount():
+    def __init__(self, account_balance=0):
+        self.account_balance = account_balance
+
+    def deposit(self, amount):
+        self.account_balance += amount
+        return self.account_balance
+
+    def withdraw(self, amount):
+        if self.account_balance > amount:
+            self.account_balance -= amount
+            return True
+        return False
+
+    def display_balance(self):
+        print(f"Current Balance: ${self.account_balance}")
