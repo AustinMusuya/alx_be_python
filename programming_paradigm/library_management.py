@@ -60,3 +60,63 @@ The expected outputs give you a clear indication of how your program should beha
 
 
 """
+
+"""
+Objective: Solidify understanding of basic OOP concepts in Python 
+by implementing a system that tracks books in a library, focusing on classes, object instantiation, and method invocation.
+
+Your Task: library_management.py
+Implement a Book class with public attributes title and author, and a private attribute _is_checked_out to track its availability.
+
+Implement a Library class with a private list _books to store instances of Book. 
+Include methods to add_book, check_out_book(title), return_book(title), and list_available_books.
+Provided for Testing: main.py
+This script demonstrates how to interact with your Book and Library classes.
+
+"""
+
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+        self._is_checked_out = False
+
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+
+
+class Library:
+    def __init__(self):
+        self.__books = []
+
+    def add_book(self, book):
+        self.book = book
+        self.__books.append(self.book)
+
+    def check_out_book(self, title):
+        self.title = title
+        for book in self.__books:
+            if book.title == self.title:
+                self.__books.remove(book)
+                return f"Checked out '{self.title}'"
+        return "Title not available"
+
+    def list_available_books(self):
+        if not self.__books:
+            return ("No books available in Library")
+
+        books_list = ""
+        for book in self.__books:
+            books_list += str(book) + "\n"
+        return books_list
+
+
+library = Library()
+
+library.add_book(Book('Harry Potter', "J.K Rowlings"))
+library.add_book(Book('Song of Ice & Fire', "R.R Martin"))
+
+library.check_out_book("Harry Potter")
+
+print(library.list_available_books())
