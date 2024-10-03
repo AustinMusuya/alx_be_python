@@ -82,41 +82,63 @@ class Book:
         self.author = author
         self._is_checked_out = False
 
+    def check_out(self):
+        if not self._is_checked_out:
+            self._is_checked_out = True
+            return True
+        return False
+
+    def return_book(self):
+        if self._is_checked_out:
+            self._is_checked_out = False
+            return True
+        return False
+
+    def is_available(self):
+        return not self._is_checked_out
+
     def __str__(self):
         return f"{self.title} by {self.author}"
 
 
 class Library:
     def __init__(self):
-        self.__books = []
+        self._books = []
 
     def add_book(self, book):
         self.book = book
-        self.__books.append(self.book)
+        self._books.append(self.book)
 
     def check_out_book(self, title):
         self.title = title
-        for book in self.__books:
-            if book.title == self.title:
-                self.__books.remove(book)
-                return f"Checked out '{self.title}'"
-        return "Title not available"
+        for book in self._books:
+            if book.title == self.title and book.is_available():
+                book.check_out()
+                return True
+        return False
+
+    def return_book(self, title):
+        self.title = title
+        for book in self._books:
+            if book.title == self.title and not book.is_available():
+                book.return_book()
+                return True
+        return False
 
     def list_available_books(self):
-        if not self.__books:
+        available_books = [book for book in self._books if book.is_available()]
+        if not available_books:
             return ("No books available in Library")
-
-        books_list = ""
-        for book in self.__books:
-            books_list += str(book) + "\n"
-        return books_list
+        else:
+            for book in available_books:
+                return f"{book.title} by {book.author}"
 
 
-library = Library()
+# library = Library()
 
-library.add_book(Book('Harry Potter', "J.K Rowlings"))
-library.add_book(Book('Song of Ice & Fire', "R.R Martin"))
+# library.add_book(Book('Harry Potter', "J.K Rowlings"))
+# library.add_book(Book('Song of Ice & Fire', "R.R Martin"))
 
-library.check_out_book("Harry Potter")
+# library.check_out_book("Harry Potter")
 
-print(library.list_available_books())
+# print(library.list_available_books())
