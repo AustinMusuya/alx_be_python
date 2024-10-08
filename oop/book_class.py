@@ -55,7 +55,7 @@ class Book:
         print(f"Deleting {self.title}")
 
 
-book1 = Book("Harry Potter", "J.K Rowling", 2002)
+# book1 = Book("Harry Potter", "J.K Rowling", 2002)
 
-print(book1)
-print(repr(book1))
+# print(book1)
+# print(repr(book1))
